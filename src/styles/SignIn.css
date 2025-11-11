@@ -1,0 +1,105 @@
+:root {
+  --bg: #f4f6fb;
+  --card: #ffffff;
+  --accent: #007bff;
+  --muted: #6b7280;
+  --danger: #ef4444;
+}
+
+.signin-root {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  padding: 2rem;
+}
+
+.signin-form {
+  width: 360px;
+  padding: 2rem;
+  border-radius: 12px;
+  background: var(--card);
+  box-shadow: 0 6px 20px rgba(15, 23, 42, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.signin-form h2 {
+  margin: 0;
+  text-align: center;
+  color: #0f172a;
+  font-size: 1.25rem;
+}
+
+.signin-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  font-size: 0.9rem;
+  color: #111827;
+}
+
+.signin-form input {
+  padding: 0.6rem 0.75rem;
+  border: 1px solid #e6e9ef;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  transition: border-color 0.15s ease;
+}
+
+.signin-form input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.06);
+}
+
+.signin-btn {
+  margin-top: 0.25rem;
+  padding: 0.7rem;
+  background: var(--accent);
+  color: white;
+  font-weight: 600;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.08s ease, background 0.12s ease;
+}
+
+.signin-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.signin-btn:not(:disabled):hover {
+  transform: translateY(-1px);
+  background: #0066e6;
+}
+
+.error-box {
+  padding: 0.5rem 0.6rem;
+  border-radius: 8px;
+  background: #fff5f5;
+  color: var(--danger);
+  font-size: 0.9rem;
+  border: 1px solid rgba(239, 68, 68, 0.08);
+}
+
+.signup-prompt {
+  text-align: center;
+  font-size: 0.88rem;
+  color: var(--muted);
+  margin: 0.2rem 0 0;
+}
+
+.signup-prompt a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.signup-prompt a:hover {
+  text-decoration: underline;
+}
