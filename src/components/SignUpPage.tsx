@@ -16,11 +16,11 @@ export default function SignUp() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const name = nameRef.current?.value.trim() || "";
+    const username = nameRef.current?.value.trim() || "";
     const email = emailRef.current?.value.trim() || "";
     const password = passwordRef.current?.value.trim() || "";
 
-    if (!name || !email || !password) {
+    if (!username || !email || !password) {
       setError("All fields are required");
       return;
     }
@@ -29,7 +29,7 @@ export default function SignUp() {
     setError(null);
 
     try {
-      await signUp({ name, email, password });
+      await signUp({ username, email, password });
       alert("Account created successfully!");
       navigate("/signin");
     } catch (err: unknown) {
