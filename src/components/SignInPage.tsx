@@ -2,8 +2,9 @@
 import React, { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import InputComponent from "../components/InputComponent";
-import { signIn, getMyProfile } from "../api/api";
+import { signIn } from "../api/api";
 import "../styles/SignIn.css";
+import axios from "axios";
 
 export default function SignIn() {
   const emailRef = useRef<HTMLInputElement>(null);
@@ -27,24 +28,17 @@ export default function SignIn() {
     setError(null);
 
     try {
-      // signIn stores token in localStorage (per your api helper)
       await signIn({ email, password });
-
-      // fetch authoritative user object from server
-      const user = await getMyProfile();
-
-      // persist user locally so other parts of app can read it if needed
-      try {
-        localStorage.setItem("user", JSON.stringify(user));
-      } catch (e) {
-        // ignore storage errors
-        console.warn("Failed to persist user to localStorage", e);
-      }
-
-      // navigate to home on success
       navigate("/home");
     } catch (err: unknown) {
-      console.error(err);
+      console.error("SignIn error raw:", err);
+      if (axios.isAxiosError(err)) {
+        setError(err.response?.data?.message || "Signin failed");
+      } else if (err instanceof Error) {
+        setError(err.message);
+      } else {
+        setError("Signin failed");
+      }
     } finally {
       setLoading(false);
     }
@@ -52,7 +46,11 @@ export default function SignIn() {
 
   return (
     <div className="signin-root">
-      <form className="signin-form" onSubmit={handleSubmit} aria-describedby="signin-error">
+      <form
+        className="signin-form"
+        onSubmit={handleSubmit}
+        aria-describedby="signin-error"
+      >
         <h2>Sign in</h2>
 
         <InputComponent

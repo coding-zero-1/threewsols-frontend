@@ -1,7 +1,7 @@
 import axios from "axios";
 
 // Use your environment variable
-const BASE_URL = `${import.meta.env.VITE_backendUrl}/api/v1/user`;
+const BASE_URL = `${import.meta.env.VITE_backendUrl}api/v1/`;
 
 // Create a configured Axios instance
 const api = axios.create({
@@ -28,12 +28,12 @@ api.interceptors.request.use(
  * POST /api/v1/user/signup
  */
 export async function signUp(data: {
-  name: string;
+  username: string;
   email: string;
   password: string;
 }) {
-  const res = await api.post("/signup", data);
-  return res.data; // expected { message, user?, token? }
+  const res = await api.post("user/signup", data);
+  return res.data; // expected { message }
 }
 
 /**
@@ -41,41 +41,18 @@ export async function signUp(data: {
  * POST /api/v1/user/signin
  * Store JWT in localStorage
  */
-export async function signIn(credentials: {
+export async function signIn(data: {
   email: string;
   password: string;
 }) {
-  const res = await api.post("/signin", credentials);
+  const res = await api.post("user/signin", data);
   const token = res.data.token;
   if (token) {
     localStorage.setItem("token", token);
   }
-  return res.data; // expected { token, user }
+  return res.data; // expected { token, message  }
 }
-
-/**
- * Fetch the authenticated user's data
- * GET /api/v1/user/me
- */
-export async function getMyProfile() {
-  const res = await api.get("/me");
-  return res.data.user ?? res.data;
-}
-
 /*
- * Update current user's profile (for name, bio, avatar, etc.)
- * PUT /api/v1/user/me
-*/
-export async function updateMyProfile(formData: FormData) {
-  const res = await api.put("/me", formData, {
-    headers: {
-      "Content-Type": "multipart/form-data",
-    },
-  });
-  return res.data.user ?? res.data;
-}
-
-/**
  * Log out user — just clear localStorage token
  */
 export function logout() {
