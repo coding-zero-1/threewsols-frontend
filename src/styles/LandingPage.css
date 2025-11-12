@@ -1,0 +1,150 @@
+:root {
+  --primary: #007bff;
+  --bg: #f8fafc;
+  --text: #1e293b;
+  --subtext: #64748b;
+  --white: #ffffff;
+  --shadow: rgba(0, 0, 0, 0.08);
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto;
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+/* Root Layout */
+.landing-root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Header */
+.landing-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: var(--white);
+  box-shadow: 0 2px 8px var(--shadow);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.landing-logo {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--primary);
+  letter-spacing: -0.5px;
+}
+
+.landing-nav {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.nav-btn {
+  border: 1px solid var(--primary);
+  background: transparent;
+  color: var(--primary);
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+}
+
+.nav-btn:hover {
+  background: var(--primary);
+  color: var(--white);
+}
+
+.nav-btn.filled {
+  background: var(--primary);
+  color: var(--white);
+}
+
+.nav-btn.filled:hover {
+  opacity: 0.9;
+}
+
+/* Hero Section */
+.landing-main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1rem;
+  text-align: center;
+}
+
+.hero {
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.hero-title {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0;
+}
+
+.hero-subtitle {
+  font-size: 1.05rem;
+  color: var(--subtext);
+  line-height: 1.5;
+  margin: 0 auto;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+}
+
+.hero-btn {
+  background: var(--primary);
+  color: var(--white);
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  padding: 0.7rem 1.6rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.hero-btn:hover {
+  background: #0066e6;
+  transform: translateY(-1px);
+}
+
+.hero-btn.outline {
+  background: transparent;
+  border: 2px solid var(--primary);
+  color: var(--primary);
+}
+
+.hero-btn.outline:hover {
+  background: var(--primary);
+  color: var(--white);
+}
+
+/* Footer */
+.landing-footer {
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+  color: var(--subtext);
+  background: var(--white);
+  border-top: 1px solid #e2e8f0;
+}
