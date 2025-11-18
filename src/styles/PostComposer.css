@@ -1,0 +1,89 @@
+.post-composer {
+  border: 1px solid #e6e6e6;
+  padding: 12px;
+  border-radius: 8px;
+  background: #fff;
+  max-width: 700px;
+  margin: 0 auto 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
+.composer-textarea {
+  width: 100%;
+  resize: vertical;
+  padding: 10px;
+  font-size: 14px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  outline: none;
+}
+
+.composer-textarea:focus {
+  border-color: #2563eb;
+}
+
+.composer-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.composer-file-label {
+  cursor: pointer;
+  padding: 6px 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background: #fafafa;
+  font-size: 13px;
+}
+
+.composer-file-label input {
+  display: none;
+}
+
+.composer-post-btn {
+  padding: 8px 14px;
+  border-radius: 6px;
+  border: none;
+  background: #2563eb;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.composer-post-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.composer-preview-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.composer-preview-img {
+  width: 130px;
+  height: 130px;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 1px solid #eee;
+}
+
+.composer-remove-img {
+  padding: 6px 8px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  background: white;
+  cursor: pointer;
+}
+
+.composer-error {
+  color: red;
+  font-size: 13px;
+  margin-top: 4px;
+}

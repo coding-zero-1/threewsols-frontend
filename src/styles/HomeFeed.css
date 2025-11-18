@@ -1,0 +1,166 @@
+.homefeed-root {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Loading / error / empty */
+.homefeed-loading,
+.homefeed-error,
+.homefeed-empty {
+  text-align: center;
+  color: #6b7280;
+  font-size: 14px;
+  padding: 12px;
+}
+
+/* Posts list */
+.homefeed-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Single post */
+.post-item {
+  border: 1px solid #e6e6e6;
+  background: #fff;
+  padding: 12px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Header */
+.post-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.post-author {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.post-author-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  background: #eef2ff;
+  color: #3730a3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 16px;
+  border: 1px solid #e6e6e6;
+}
+
+.post-author-meta {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+
+.post-author-name {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.post-time {
+  font-size: 12px;
+  color: #6b7280;
+}
+
+/* Content */
+.post-content {
+  font-size: 15px;
+  white-space: pre-wrap;
+}
+
+/* Image */
+.post-image-wrap {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.post-image {
+  max-width: 100%;
+  max-height: 420px;
+  border-radius: 8px;
+  object-fit: cover;
+  border: 1px solid #eee;
+}
+
+/* Footer / stats */
+.post-footer {
+  border-top: 1px solid #f3f4f6;
+  padding-top: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.post-stats {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  color: #374151;
+  font-size: 14px;
+}
+
+.stat strong {
+  display: inline-block;
+  margin-right: 6px;
+  font-weight: 700;
+}
+
+.stat-label {
+  color: #6b7280;
+  font-weight: 500;
+  margin-left: 4px;
+  font-size: 13px;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .homefeed-root {
+    padding: 12px;
+  }
+
+  .post-image {
+    max-height: 320px;
+  }
+}
+.feed-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.logout-btn {
+  padding: 6px 12px;
+  background: #ef4444;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.15s;
+}
+
+.logout-btn:hover {
+  background: #dc2626;
+}
+
+.logout-btn:active {
+  transform: scale(0.97);
+}
