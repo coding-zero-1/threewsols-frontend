@@ -1,6 +1,10 @@
+import HomeFeed from "./HomeFeed"
+
 function Home() {
   return (
-    <div>Home</div>
+    <div>
+      <HomeFeed />
+    </div>
   )
 }
 
